@@ -1,0 +1,31 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>In the <code>hr.fer.oop</code> package in the <code>LabArray</code> class, write the method:</p>
+<pre class="line-numbers"><code>public static void increasing(int[] arr)
+</code></pre>
+<p>which will fill the array with randomly selected integers in the following way:</p>
+<ul>
+<li>the first number will be in the range <code>[1, 10&gt;</code></li>
+<li>each subsequent number will be in the range <code>[previous number, 2 * previously generated number&gt;</code></li>
+</ul>
+<p><em>Example</em>: <code>[9,12,20,20,36]</code>, where the first number 9 is generated from <code>[1,10&gt;</code>, then the second number 12 is generated randomly from <code>[9,18&gt;</code>, then 20 is generated from <code>[12,24&gt;</code>, then 20 is generated again from <code>[20,40&gt;</code>, and finally 36 is generated from <code>[20,40&gt;</code>. If another number were to be generated, it would be randomly drawn from the range <code>[36,72&gt;</code>.</p>
+<p>You may use the <code>java.util.Random</code> class or the <code>Math.random()</code> method. You may not use any of the other standard classes.</p>
+<p><strong>Note:</strong> the task is tested with random data and it is possible that there are no errors in one run and errors in another run (non-deterministic). Therefore, it is necessary to pay attention to the edge cases of the task.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

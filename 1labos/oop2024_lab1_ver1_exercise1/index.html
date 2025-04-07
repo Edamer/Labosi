@@ -1,0 +1,31 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U paketu <code>hr.fer.oop</code> u klasi <code>LabArray</code> napisati metodu:</p>
+<pre class="line-numbers"><code>public static void increasing(int[] arr)
+</code></pre>
+<p>koja će napuniti niz slučajno odabranim cijelim brojevima na sljedeći način:</p>
+<ul>
+<li>prvi broj će biti u rasponu <code>[1, 10&gt;</code></li>
+<li>svaki sljedeći broj će biti u rasponu od <code>[prethodni broj, 2 * prethodno generirani broj&gt;</code></li>
+</ul>
+<p><em>Primjer</em>: <code>[9,12,20,20,36]</code>, gdje je prvi broj 9 generiran iz <code>[1,10&gt;</code>, zatim je drugi broj 12 generiran slučajno iz <code>[9,18&gt;</code>, pa je 20 generiran iz <code>[12,24&gt;</code>, pa je 20 opet generiran iz <code>[20,40&gt;</code>, i konačno je 36 generiran iz <code>[20,40&gt;</code>. Da se trebao generirati još jedan broj, on bi bio slučajno izvučen iz raspona <code>[36,72&gt;</code>.</p>
+<p>Smijete koristiti klase <code>java.util.Random</code> ili metodu <code>Math.random()</code>. Ništa od drugih standardnih klasa ne smijete koristiti.</p>
+<p><strong>Napomena:</strong> zadatak se ispituje sa slučajnim podacima i moguće je da u nekom pokretanju nema grešaka, a u nekom drugom pokretanju ima greške (nedeterministički). Stoga je potrebno obratiti pozornost na rubne slučajeve zadatka.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>
