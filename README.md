@@ -1,1 +1,1 @@
-"FER OOP labosi 2024./2025." 
+FER OOP labosi 2024./2025. 
