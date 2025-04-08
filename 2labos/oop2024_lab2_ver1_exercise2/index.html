@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku je potrebno napisati klase <code>Task</code>, <code>TaskTag</code>, <code>PriorityTag</code>, <code>DateTag</code> i <code>ParameterTag</code>.</p>
+<p>U svim klasama je potrebno i implementirati metode kako su prikazane na
+dijagramu klasa. Slobodno možete dodati i implementirati dodatne metode,
+atribute i konstruktore.</p>
+<p><img src="res/uml.png" alt="UML" /></p>
+<p>Klasa <code>Task</code> sadrži tekst i može sadržavati 0 ili više <code>TaskTag</code>-ova. Prilikom poziva metode <code>toString</code> se vraća tekst na koji su spojeni (konkatenirani) <code>TaskTag</code>-ovi. Sve se odvaja jednim razmakom. Konkretan primjer pogledajte u primjeru korištenja. U <code>Task</code> se može dodati <code>TaskTag</code> metodom <code>add</code>. <code>Task</code> može imati maksimalno 10 <code>TaskTag</code>-ova. Ako se proba dodati 11. <code>TaskTag</code> ništa se ne dodaje u <code>Task</code>.</p>
+<p>Svaka vrsta oznaka (<code>TaskTag</code>) se na drugačiji način prikazuje tj. drugi je
+format zapisa. Primjeri zapisa oznake:</p>
+<ul>
+<li><code>TaskTag</code>, <code>name=&quot;done&quot;</code> - zapis: <code>@done</code></li>
+<li><code>PriorityTag</code>, <code>name=&quot;todo&quot;</code>, <code>priority=3</code> - zapis: <code>@todo(3)</code></li>
+<li><code>ParameterTag</code>, <code>name=&quot;repeat&quot;</code>, <code>parameter=&quot;daily&quot;</code> - zapis: <code>@repeat(daily)</code></li>
+<li><code>DateTag</code>, <code>name=&quot;due&quot;</code>,  <code>year=2020</code>, <code>month=7</code>, <code>day=15</code>- zapis: <code>@due(2020-07-15)</code> (format je <strong>yyyy-mm-dd</strong> tj. 4 znamenke za godinu, 2 za mjesec i 2 za dan ako se broj može prikazati s manje znamenki potrebno je ispred dodati nule do zadanog broja znamenki).</li>
+</ul>
+<p>U klasi <code>DateTag</code> treba paziti da se mogu zapisati samo ispravne vrijednosti. Ako neka vrijednost nije ispravana potrebno je staviti prvu najbližu ispravnu vrijednost. Npr. za mjesec ako u konstruktoru dobijemo 15 onda ga treba postaviti na 12 ili za dan ako je ulazna vrijednost 0 potrebno ju je staviti na 1. Za dan pazite koji mjesec ima koliko dana. Zanemarite prestupne godine.</p>
+<p>Primjer korištenja:</p>
+<pre class="line-numbers"><code class="language-java">Task task = new Task(&quot;some task&quot;);
+System.out.println(task);
+
+task.add(new TaskTag(&quot;todo&quot;));
+System.out.println(task);
+
+task.add(new PriorityTag(&quot;priority&quot;, 3));
+System.out.println(task);
+
+task.add(new ParameterTag(&quot;repeat&quot;, &quot;weekly&quot;));
+System.out.println(task);
+
+task.add(new DateTag(&quot;due&quot;, 2020, 5, 1));
+System.out.println(task);
+
+task.add(new DateTag(&quot;start&quot;, 2020, 4, 40));
+System.out.println(task);
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-sh">some task
+some task @todo
+some task @todo @priority(3)
+some task @todo @priority(3) @repeat(weekly)
+some task @todo @priority(3) @repeat(weekly) @due(2020-05-01)
+some task @todo @priority(3) @repeat(weekly) @due(2020-05-01) @start(2020-04-30)
+</code></pre>
+<p>Legenda vidljivosti u dijagramu klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<p><strong>Napomena:</strong> Sve klase i sučelja moraju biti javne i nalaziti se u paketu <code>hr.fer.oop</code>.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

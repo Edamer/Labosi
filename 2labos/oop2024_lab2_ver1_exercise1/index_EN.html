@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>All classes are in package <code>hr.fer.oop</code>. All classes are public.</p>
+<p>You need to write 2 classes: <code>Vehicle</code> and <code>Car</code>.</p>
+<p>The <code>Vehicle</code> class cannot be instantiated and has two member variables <code>String name</code> and <code>int yearProduced</code> declared as <strong>constants</strong>. Write the appropriate constructor, getters and setters, if necessary.</p>
+<p>The <code>Car</code> class <strong>inherits</strong> the <code>Vehicle</code> class and has 2 member variables <code>int[] speed</code> (speed in m/s) and <code>int[] RPM</code> (number of revolutions). The specified parameters (vehicle speed and RPM) were measured while the vehicle was driving with a sampling time of 2 seconds. Write the appropriate constructor and implement the following methods:</p>
+<ul>
+<li><code>public float calculateAverageAcceleration()</code> - calculates the average acceleration of the vehicle by calculating the acceleration between two consecutive speed sampling points. It is necessary to subtract the speed (current - previous) and divide by the sampling time (2s). Finally, you need to calculate the average of the calculated accelerations. (Assume that there are at least two or more speed measurements.)</li>
+<li><code>public float calculateAverageRPM()</code> - calculates the average RPM value</li>
+<li><code>public String calculateEcoValue()</code> - calculates whether the drive is an eco drive. If the average acceleration is between [0.5, 2] and the average RPM is between [2000, 2500] then you need to return <code>&quot;eco&quot;</code>, otherwise <code>&quot;non-eco&quot;</code>.</li>
+</ul>
+<p>Additionally, in the <code>Car</code> class you need to add the following method:</p>
+<pre class="line-numbers"><code class="language-java">@Override
+public String toString() {
+return &quot;My car &quot; + getName() + &quot; is produced &quot; + getYearProduced() + &quot; and I am &quot;
++ calculateEcoValue() + &quot; driver.&quot;;
+}
+</code></pre>
+<p>Example of performance:</p>
+<pre class="line-numbers"><code class="language-java">Car myPolo = new Car(&quot;Polo&quot;, 2015, new int[]{15, 20, 33, 33, 38}, new int[] {2000, 2500, 3000, 3200, 2600});
+System.out.println(myPolo.calculateAverageAcceleration());
+System.out.println(myPolo.calculateAverageRPM());
+System.out.println(myPolo.calculateEcoValue());
+System.out.println(myPolo.toString());
+</code></pre>
+<p>Result:</p>
+<pre class="line-numbers"><code class="language-sh">2,875
+2660.0
+non-eco
+My car Polo is produced in 2015 and I am a non-eco driver.
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

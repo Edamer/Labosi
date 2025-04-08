@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Sve klase se nalaze u paketu <code>hr.fer.oop</code>. Sve klase su javne.</p>
+<p>Potrebno je napisati 2 klase: <code>Vehicle</code> i <code>Car</code>.</p>
+<p>Klasa <code>Vehicle</code> se <strong>ne može instancirati</strong> te ima dvije  članske varijable <code>String name</code> i <code>int yearProduced</code> deklarirane kao <strong>konstante</strong>. Napisati odgovarajući konstuktor, getere i setere, ako je potrebno.</p>
+<p>Klasa <code>Car</code> <strong>nasljeđuje</strong> klasu <code>Vehicle</code> i ima 2 članske varijable <code>int[] speed</code> (brzina u m/s) i <code>int[] RPM</code> (broj okretaja). Navedeni parametri (brzina vozila i RPM) su izmjereni tijekom vožnje vozila s vremenom uzorkovanja 2 sekunde. Napisati odgovarajući konstruktor i implementirati sljedeće metode:</p>
+<ul>
+<li><code>public float calculateAverageAcceleration()</code> - računa prosječnu akceleraciju vozila tako da se računa akceleracija između dvaju uzastopnih točaka uzorkovanja brzine. Potrebno je oduzeti brzinu (trenutna - prethodna) te podijeliti s vremenom uzorkovanja (2s). Naposlijetku je potrebno izračunati prosjek iz izračunatih akceleracija. (Pretpostavite da postoje barem dva ili više izmjerenih podataka o brzini.)</li>
+<li><code>public float calculateAverageRPM()</code> - računa prosječnu vrijednost RPM-a</li>
+<li><code>public String calculateEcoValue()</code> - računa da li vožnja spada u eko vožnju. Ako je prosječna akceleracija između [0.5, 2] i prosječni RPM između [2000, 2500] onda je potrebno vratiti <code>&quot;eco&quot;</code>, inače <code>&quot;non-eco&quot;</code>.</li>
+</ul>
+<p>Dodatno, u klasi <code>Car</code> trebate dodati sljedeću metodu:</p>
+<pre class="line-numbers"><code class="language-java">@Override
+public String toString() {
+	return &quot;My car &quot; + getName() + &quot; is produced &quot; + getYearProduced() + &quot; and I am &quot; 
+	+ calculateEcoValue() + &quot; driver.&quot;;
+}
+</code></pre>
+<p>Primjer izvođenja:</p>
+<pre class="line-numbers"><code class="language-java">Car myPolo = new Car(&quot;Polo&quot;, 2015, new int[]{15, 20, 33, 33, 38}, new int[] {2000, 2500, 3000, 3200, 2600});
+System.out.println(myPolo.calculateAverageAcceleration());
+System.out.println(myPolo.calculateAverageRPM());
+System.out.println(myPolo.calculateEcoValue());
+System.out.println(myPolo.toString());
+</code></pre>
+<p>Rezultat:</p>
+<pre class="line-numbers"><code class="language-sh">2.875
+2660.0
+non-eco
+My car Polo is produced 2015 and I am non-eco driver.
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

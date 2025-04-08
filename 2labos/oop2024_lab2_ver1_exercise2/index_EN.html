@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>In the task, it is necessary to write the classes <code>Task</code>, <code>TaskTag</code>, <code>PriorityTag</code>, <code>DateTag</code> and <code>ParameterTag</code>.</p>
+<p>In all classes, it is also necessary to implement the methods as shown in the
+class diagram. You are free to add and implement additional methods,
+attributes and constructors.</p>
+<p><img src="res/uml.png" alt="UML" /></p>
+<p>The <code>Task</code> class contains text and can contain 0 or more <code>TaskTag</code>s. When the <code>toString</code> method is called, the text to which the <code>TaskTag</code>s are connected (concatenated) is returned. Everything is separated by a single space. See the usage example for a specific example. A <code>TaskTag</code> can be added to a <code>Task</code> using the <code>add</code> method. <code>Task</code> can have a maximum of 10 <code>TaskTag</code>s. If you try to add 11, nothing is added to <code>Task</code>.</p>
+<p>Each type of tag (<code>TaskTag</code>) is displayed in a different way, i.e. the
+record format is different. Examples of label records:</p>
+<ul>
+<li><code>TaskTag</code>, <code>name=&quot;done&quot;</code> - record: <code>@done</code></li>
+<li><code>PriorityTag</code>, <code>name=&quot;todo&quot;</code>, <code>priority=3</code> - record: <code>@todo(3)</code></li>
+<li><code>ParameterTag</code>, <code>name=&quot;repeat&quot;</code>, <code>parameter=&quot;daily&quot;</code> - record: <code>@repeat(daily)</code></li>
+<li><code>DateTag</code>, <code>name=&quot;due&quot;</code>, <code>year=2020</code>, <code>month=7</code>, <code>day=15</code>- record: <code>@due(2020-07-15)</code> (the format is <strong>yyyy-mm-dd</strong> i.e. 4 digits for the year, 2 for the month and 2 for the day if the number can be displayed with fewer digits it is necessary to add zeros in front to the given number of digits).</li>
+</ul>
+<p>In the `DateTag' class, care should be taken that only correct values ​​can be written. If a value is not correct, it is necessary to put the first closest correct value. E.g. for the month, if we get 15 in the constructor, then it should be set to 12, or for the day, if the input value is 0, it should be set to 1. For the day, pay attention to which month has how many days. Ignore leap years.</p>
+<p>Usage example:</p>
+<pre class="line-numbers"><code class="language-java">Task task = new Task(&quot;some task&quot;);
+System.out.println(task);
+
+task.add(new TaskTag(&quot;todo&quot;));
+System.out.println(task);
+
+task.add(new PriorityTag(&quot;priority&quot;, 3));
+System.out.println(task);
+
+task.add(new ParameterTag(&quot;repeat&quot;, &quot;weekly&quot;));
+System.out.println(task);
+
+task.add(new DateTag(&quot;due&quot;, 2020, 5, 1));
+System.out.println(task);
+
+task.add(new DateTag(&quot;start&quot;, 2020, 4, 40));
+System.out.println(task);
+</code></pre>
+<p>Expected output:</p>
+<pre class="line-numbers"><code class="language-sh">some task
+some task @todo
+some task @todo @priority(3)
+some task @todo @priority(3) @repeat(weekly)
+some task @todo @priority(3) @repeat(weekly) @due(2020-05-01)
+some task @todo @priority(3) @repeat(weekly) @due(2020-05-01) @start(2020-04-30)
+</code></pre>
+<p>Visibility legend in the class diagram:</p>
+<p><img src="res/vidljivost.png" alt="Visibility legend" /></p>
+<p><strong>Note:</strong> All classes and interfaces must be public and located in the <code>hr.fer.oop</code> package.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>
