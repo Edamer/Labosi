@@ -11,28 +11,30 @@ public class Car extends Vehicle {
     }
 
     public float calculateAverageAcceleration() {
-        float averageAccelerationSum = 0;
-        for (int i = 0; i < speed.length - 1; i++) {
-            averageAccelerationSum += (float) (speed[i+1]-speed[i]) / 2;
+        float accT = 0;
+        for (int i = 1; i < speed.length; i++) {
+            accT+= (float) (1.*(speed[i]-speed[i-1])/2);
         }
-        return averageAccelerationSum / (speed.length - 1);
+
+        return accT/(speed.length-1);
     }
 
     public float calculateAverageRPM() {
-        float averageRPMSum = 0;
+        float rpmT = 0;
         for (int i = 0; i < RPM.length; i++) {
-            averageRPMSum += RPM[i];
+            rpmT+= (float) RPM[i];
         }
-        return averageRPMSum / (RPM.length);
+        return rpmT/RPM.length;
     }
 
     public String calculateEcoValue() {
-        if (calculateAverageAcceleration() <= 2 && calculateAverageAcceleration() >= 0.5 && calculateAverageRPM() >= 2000 && calculateAverageRPM() <= 25000) {
+        if (calculateAverageAcceleration() > 0.5 && calculateAverageAcceleration() < 2.5 && calculateAverageRPM() > 2000 && calculateAverageRPM() < 2500) {
             return "eco";
-        }else{
-            return "non-eco";
         }
+
+        return "non-eco";
     }
+
     @Override
     public String toString() {
         return "My car " + getName() + " is produced " + getYearProduced() + " and I am "

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/1labos/oop2024_lab1_ver1_exercise1" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../Gradle/gradle-8.12.1-bin/gradle-8.12.1" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/1labos/oop2024_lab1_ver1_exercise1" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/1labos/oop2024_lab1_ver1_exercise2" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../Gradle/gradle-8.12.1-bin/gradle-8.12.1" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/1labos/oop2024_lab1_ver1_exercise2" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/1labos/oop2024_lab1_ver1_exercise3" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../Gradle/gradle-8.12.1-bin/gradle-8.12.1" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/1labos/oop2024_lab1_ver1_exercise3" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/2labos/oop2024_lab2_ver1_exercise1" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../Gradle/gradle-8.12.1-bin/gradle-8.12.1" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/2labos/oop2024_lab2_ver1_exercise1" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/2labos/oop2024_lab2_ver1_exercise2" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../Gradle/gradle-8.12.1-bin/gradle-8.12.1" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/2labos/oop2024_lab2_ver1_exercise2" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

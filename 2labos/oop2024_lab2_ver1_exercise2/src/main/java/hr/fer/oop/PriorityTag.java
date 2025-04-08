@@ -7,8 +7,9 @@ public class PriorityTag extends TaskTag {
         super(name);
         this.priority = priority;
     }
+
     @Override
     public String toString() {
-        return super.toString()+ "("+priority+")";
+        return super.toString()+"("+priority+")";
     }
 }
